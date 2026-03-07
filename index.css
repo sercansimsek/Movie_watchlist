@@ -10,6 +10,8 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* Header */
+
 .header {
   background-image: url(/images/header.png);
   background-color: rgba(0, 0, 0, 0.8);
@@ -37,4 +39,18 @@ body {
 
 .header-link:visited {
   color: #fff;
+}
+
+/* FOrm */
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
 }
