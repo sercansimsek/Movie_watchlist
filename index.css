@@ -8,6 +8,10 @@
 
 body {
   font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Header */
@@ -43,14 +47,39 @@ body {
 
 /* FOrm */
 
-.form {
+.flexCenter {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.form {
+  margin-top: 10px;
+}
+
 .search-icon {
-  width: 20px;
-  height: 20px;
-  border: 1px solid black;
+  padding: 0.625em;
+  border: 2px solid gray;
+  border-right: none;
+}
+
+.submit-btn,
+.search-input {
+  font-size: medium;
+  color: gray/700;
+  padding: 0.7em 0.7em;
+  border: 2px solid gray;
+}
+
+.search-input {
+  border-left: none;
+  border-right: none;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: gray/500;
 }
