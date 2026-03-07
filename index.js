@@ -1,14 +1,25 @@
+const main = document.querySelector(".main");
+const searchInput = document.querySelector(".search-input");
+const submitBtn = document.querySelector(".submit-btn");
+const form = document.querySelector(".form");
+
 import getApiKey from "./env.js";
 
 const apiKey = getApiKey();
 
-const baseURL = `http://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}`;
+function dataFromServer(event) {
+  event.preventDefault();
 
-const dataFromServer = async () => {
-  const response = await fetch(`${baseURL}`);
-  const data = await response.json();
+  const movieTitle = searchInput.value.trim();
 
-  console.log(data);
-};
+  if (!movieTitle) {
+    console.log("Please enter a movie title");
+    return;
+  }
 
-// dataFromServer()
+  fetch(`https://www.omdbapi.com/?t=${movieTitle}&apikey=${apiKey}`)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+}
+
+form.addEventListener("submit", dataFromServer);
