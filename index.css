@@ -10,8 +10,11 @@ body {
   font-family: "Inter", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  background-color: #dfdddd;
+  max-width: 550px;
+  min-height: 100vh;
+  margin: 0 auto;
 }
 
 /* Header */
@@ -43,6 +46,11 @@ body {
 
 .header-link:visited {
   color: #fff;
+}
+
+.header-link:hover,
+.header-link:active {
+  color: #dfdddd;
 }
 
 /* FOrm */
@@ -93,4 +101,24 @@ body {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   cursor: pointer;
+}
+
+.submit-btn:hover,
+.submit-btn:active {
+  background-color: #dfdddd;
+  color: #121212;
+}
+
+/* Main */
+
+.main {
+  flex: 1;
+  width: 100%;
+  background-color: #fff;
+}
+
+.start-exploring {
+  display: block;
+  width: 150px;
+  height: 90px;
 }
