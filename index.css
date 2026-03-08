@@ -125,25 +125,41 @@ body {
 
 .listing {
   display: flex;
+  gap: 1.5em;
 }
 
 .listing-container {
   padding: 0 3em;
+  margin-top: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .listing-info {
   display: flex;
   flex-direction: column;
+  gap: 0.4em;
 }
 
 .listing-header {
   display: flex;
-  gap: 0.5em;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.listing-title {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: medium;
 }
 
 .listing-rating {
   display: flex;
   gap: 0.5em;
+  color: #111827;
+  font-size: 0.75rem;
 }
 
 /*  */
@@ -166,4 +182,7 @@ body {
   cursor: pointer;
 }
 
-
+.divider {
+  height: 2px;
+  border: 1px solid #e5e7eb;
+}
