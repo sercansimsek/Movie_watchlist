@@ -115,12 +115,17 @@ body {
   flex: 1;
   width: 100%;
   background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .start-exploring {
   display: block;
   width: 150px;
   height: 90px;
+  margin: 0 auto;
 }
 
 .listing {
@@ -200,5 +205,5 @@ body {
   height: 2px;
   border: 1px solid #e5e7eb;
   width: 100%;
-  margin-top: 1.25em;
+  margin: 1.25em 0;
 }
