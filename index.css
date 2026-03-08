@@ -140,7 +140,13 @@ body {
 .listing-info {
   display: flex;
   flex-direction: column;
-  gap: 0.4em;
+  justify-content: center;
+  gap: 0.6em;
+}
+
+.listing-banner {
+  width: 100px;
+  height: 150px;
 }
 
 .listing-header {
@@ -167,6 +173,8 @@ body {
 .listing-extra {
   display: flex;
   gap: 0.5em;
+  color: #111827;
+  font-size: 0.75rem;
 }
 
 .listing-watchlist {
@@ -180,9 +188,17 @@ body {
   width: 16px;
   height: 16px;
   cursor: pointer;
+  margin-left: 1em;
+}
+
+.listing-description {
+  color: #6b7280;
+  font-size: 0.875rem;
 }
 
 .divider {
   height: 2px;
   border: 1px solid #e5e7eb;
+  width: 100%;
+  margin-top: 1.25em;
 }
