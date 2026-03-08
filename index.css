@@ -121,6 +121,15 @@ body {
   justify-content: center;
 }
 
+.main-err {
+  color: #dfdddd;
+  font-weight: bold;
+  font-size: 1.125rem;
+  text-align: center;
+  width: 320px;
+  margin: 0 auto;
+}
+
 .start-exploring {
   display: block;
   width: 150px;

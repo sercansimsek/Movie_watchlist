@@ -22,15 +22,12 @@ function dataFromServer(event) {
   }
 
   fetch(`https://www.omdbapi.com/?s=${movieTitle}&apikey=${apiKey}`)
-    .then((response) => {
-      response.json();
-
-      if (!response.ok) {
-        main.innerHTML =
-          "<p>Unable to find what you are looking for. Please try another search.</p>";
-      }
-    })
+    .then((response) => response.json())
     .then((data) => {
+      if (data.Response === "False") {
+        main.innerHTML = `<p class='main-err'>Unable to find what you are looking for. Please try another search.</p>`;
+        return;
+      }
       data.Search.map((movie) => {
         fetch(`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=${apiKey}`)
           .then((res) => res.json())
