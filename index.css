@@ -122,3 +122,48 @@ body {
   width: 150px;
   height: 90px;
 }
+
+.listing {
+  display: flex;
+}
+
+.listing-container {
+  padding: 0 3em;
+}
+
+.listing-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-header {
+  display: flex;
+  gap: 0.5em;
+}
+
+.listing-rating {
+  display: flex;
+  gap: 0.5em;
+}
+
+/*  */
+
+.listing-extra {
+  display: flex;
+  gap: 0.5em;
+}
+
+.listing-watchlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.add-icon {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+
