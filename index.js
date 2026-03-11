@@ -1,6 +1,6 @@
 const main = document.querySelector(".main");
 const searchInput = document.querySelector(".search-input");
-const submitBtn = document.querySelector(".submit-btn");
+// const submitBtn = document.querySelector(".submit-btn");
 const form = document.querySelector(".form");
 const listingContainer = document.querySelector(".listing-container");
 const startExploring = document.querySelector(".start-exploring");
@@ -8,6 +8,7 @@ const startExploring = document.querySelector(".start-exploring");
 import getApiKey from "./env.js";
 
 const apiKey = getApiKey();
+let watchlist = JSON.parse(localStorage.getItem("watchlist") || "[]");
 
 function dataFromServer(event) {
   event.preventDefault();
@@ -59,8 +60,8 @@ function dataFromServer(event) {
                   src="/images/dev.svg"
                   alt="plus icon represents adding an item"
                   class="add-icon"
+                  data-imdbid="${movie.imdbID}"
                 />
-
                 <p class="watchlist-text">Watchlist</p>
               </div>
             </div>
@@ -80,4 +81,25 @@ function dataFromServer(event) {
   searchInput.value = "";
 }
 
+function handleAddItem(imdbId) {
+  if (watchlist.some((movie) => movie.imdbID === imdbId)) {
+    alert("Movie is already in your watchlist!");
+    return;
+  }
+
+  fetch(`https://www.omdbapi.com/?i=${imdbId}&apikey=${apiKey}`)
+    .then((res) => res.json())
+    .then((movie) => {
+      watchlist.push(movie);
+      localStorage.setItem("watchlist", JSON.stringify(watchlist));
+      alert("Movie added to watchlist!");
+    });
+}
+
 form.addEventListener("submit", dataFromServer);
+listingContainer.addEventListener("click", function (e) {
+  if (e.target.dataset.imdbid) {
+    handleAddItem(e.target.dataset.imdbid);
+  }
+});
+
